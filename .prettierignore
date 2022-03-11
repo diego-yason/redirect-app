@@ -1,0 +1,16 @@
+.svelte/**
+static/**
+build/**
+node_modules/**
+
+# From gitignore
+.DS_Store
+node_modules
+/.svelte
+/.svelte-kit
+/build
+/functions
+/package
+.env
+.env.*
+!.env.example
