@@ -24,3 +24,5 @@ export const get: RequestHandler = async ({ url }) => {
         }
     };
 };
+
+// TODO: add post method

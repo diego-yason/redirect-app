@@ -18,6 +18,7 @@
     };
 </script>
 
+<!-- TODO: make it look nice -->
 <script lang="ts">
     export let url: URL;
 </script>
