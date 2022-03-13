@@ -1,6 +1,8 @@
 import redis from "$lib/redis";
 import type { RequestHandler } from "@sveltejs/kit";
 
+import { dev } from "$app/env";
+
 export const get: RequestHandler = async ({ url }) => {
     const errorParams = new URLSearchParams({
         link: url.pathname
@@ -8,7 +10,7 @@ export const get: RequestHandler = async ({ url }) => {
 
     console.log("Trying to access %s...", url.pathname);
 
-    let link = await redis.hget("2011482.xyz", `${url.pathname}`);
+    let link = await redis.hget(dev ? "2011482.xyz" : url.hostname, `${url.pathname}`);
 
     if (!link) {
         console.error("Fail. Redirecting to 404");
@@ -18,9 +20,9 @@ export const get: RequestHandler = async ({ url }) => {
     }
 
     return {
-        status: 302,
-        headers: {
-            Location: link
+        status: 200,
+        body: {
+            redirect: link
         }
     };
 };
