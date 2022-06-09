@@ -20,9 +20,13 @@
 
 <!-- TODO: make it look nice -->
 <script lang="ts">
+    import LinkBar from "$lib/components/LinkBar.svelte";
     export let url: URL;
 </script>
 
 <h1>link doesn't exist</h1>
 
 <p>You tried to access <code>{url.pathname}</code>, you sure you typed it right?</p>
+
+Well, you can try to type it here and see if its correct
+<LinkBar />
