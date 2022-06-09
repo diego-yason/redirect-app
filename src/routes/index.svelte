@@ -8,3 +8,6 @@ Although, I have given you the liberty to instead type down the link below!
 
 <LinkBar />
 
+Unless you want to get into the admin panel?
+
+<a href="/admin">well click here</a>
